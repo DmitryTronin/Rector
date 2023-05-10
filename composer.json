@@ -1,0 +1,22 @@
+{
+  "name": "dta/dta",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Dmitry.Tronin",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload":
+    {
+      "classmap": [
+        "src/"
+      ]
+    },
+  "require-dev": {
+    "rector/rector": "@dev",
+    "phpunit/phpunit": "9"
+  }
+}
