@@ -1,0 +1,6 @@
+{
+    "php.language.level": "8.1",
+    "php.executable": "C:/php/xampp8.1.6/php/php.exe",
+    "phpunit.executable": "C:/Projects/PHP/Rector/vendor/bin/phpunit",
+    "toolchains": []
+}

@@ -14,13 +14,6 @@ use EmailValidation\Validations\Validator;
 use EmailValidation\Validations\ValidFormatValidator;
 
 
-/**
- * Class EmailValidatorFactory
- *
- * Factory class for creating and initializing EmailValidator instances
- * with a set of default validators.
- */
-
 class EmailValidatorFactory
 {
     /** @var Validator[] */

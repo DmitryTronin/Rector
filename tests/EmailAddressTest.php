@@ -15,7 +15,7 @@ class EmailAddressTest extends TestCase
 
     private EmailAddress $invalidEmail;
 
-    
+
     public function testEmailNamePartConstant(): void
     {
         $this->assertClassHasAttribute('EMAIL_NAME_PART', EmailAddress::class);

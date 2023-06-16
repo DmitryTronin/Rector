@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace EmailValidation;
 
+// do smth? 
 class EmailAddress
 {
     public const EMAIL_NAME_PART = 0;
@@ -12,6 +13,7 @@ class EmailAddress
     private string $emailAddress;
 
     public function __construct(string $emailAddress){$this->emailAddress = $emailAddress;}
+
 
     public function getNamePart(): ?string
     {        if ($this->isValidEmailAddressFormat()) {return $this->getEmailPart(self::EMAIL_NAME_PART);

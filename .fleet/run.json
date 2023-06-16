@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "rector",
+            "program": "$PROJECT_DIR$\\vendor\\bin\\rector.bat",
+            "args": ["process", "src", "--dry-run"],
+        },
+        {
+            "type": "php-test",
+            "name": "Php-test configuration",
+            "dependsOn": [],
+            "workingDir": "",
+            "allowParallelRun": true,
+            "phpUnitExecutable": {
+                "root": {},
+                "components": [],
+            },
+            "arguments": [],
+        },
+        {
+            "type": "php",
+            "name": "Php configuration",
+            "file": ""
+        },
+        {
+            "type": "command",
+            "name": "phpunit hack configuration",
+            "program": "php",
+            "args": ["C:/Projects/PHP/Rector/vendor/bin/phpunit", "--testdox", "tests/EmailAddressTest.php"],
+        },
+        
+        
+        
+        
+    ]
+}
