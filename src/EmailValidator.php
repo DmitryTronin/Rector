@@ -6,6 +6,9 @@ namespace EmailValidation;
 
 use EmailValidation\Validations\Validator;
 
+/**
+ * 
+ */
 class EmailValidator
 {
     private EmailAddress $emailAddress;

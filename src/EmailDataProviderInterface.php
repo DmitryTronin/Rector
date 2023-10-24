@@ -2,6 +2,7 @@
 
 namespace EmailValidation;
 
+//
 interface EmailDataProviderInterface
 {
     public function getEmailProviders(): array;
