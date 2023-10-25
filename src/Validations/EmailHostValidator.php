@@ -8,7 +8,7 @@ class EmailHostValidator extends Validator implements ValidatorInterface
 {
     public function getValidatorName(): string
     {
-        return 'valid_host'; // @codeCoverageIgnore
+        return 'valid_host';
     }
 
     public function getResultResponse(): bool
@@ -18,11 +18,12 @@ class EmailHostValidator extends Validator implements ValidatorInterface
             return ($this->getHostByName($hostName) !== $hostName);
         }
 
-        return false; // smth
+        return false; // huh
     }
 
     protected function getHostByName(string $hostName): string
     {
         return gethostbyname($hostName); // @codeCoverageIgnore
+
     }
 }
