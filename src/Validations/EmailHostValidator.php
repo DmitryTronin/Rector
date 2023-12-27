@@ -6,6 +6,7 @@ namespace EmailValidation\Validations;
 
 class EmailHostValidator extends Validator implements ValidatorInterface
 {
+    /** @return string Foobar */
     public function getValidatorName(): string
     {
         return 'valid_host';
@@ -26,4 +27,5 @@ class EmailHostValidator extends Validator implements ValidatorInterface
         return gethostbyname($hostName); // @codeCoverageIgnore
 
     }
+
 }

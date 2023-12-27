@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EmailAddressTest extends TestCase
 {
-    
+
     private const VALID_TEST_EMAIL = 'dave@gmail.com';
     private const INVALID_TEST_EMAIL = 'dave----gmail.com';
 
@@ -18,10 +18,10 @@ class EmailAddressTest extends TestCase
 
     public function testEmailNamePartConstant(): void
     {
-        $this->assertClassHasAttribute('EMAIL_NAME_PART', EmailAddress::class);
+        $this->assertTrue(defined('\EmailValidation\EmailAddress::EMAIL_NAME_PART'));
         $this->assertSame(0, EmailAddress::EMAIL_NAME_PART);
     }
-    
+
     public function testAsString(): void
     {
         $this->assertSame(self::VALID_TEST_EMAIL, $this->validEmail->asString());

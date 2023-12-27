@@ -2,36 +2,47 @@
     "configurations": [
         {
             "type": "command",
-            "name": "rector",
+            "name": "rector dry run",
             "program": "$PROJECT_DIR$\\vendor\\bin\\rector.bat",
-            "args": ["process", "src", "--dry-run"],
-        },
-        {
-            "type": "php-test",
-            "name": "Php-test configuration",
-            "dependsOn": [],
-            "workingDir": "",
-            "allowParallelRun": true,
-            "phpUnitExecutable": {
-                "root": {},
-                "components": [],
-            },
-            "arguments": [],
+            "args": [
+                "process",
+                "src",
+                "--dry-run"
+            ],
         },
         {
             "type": "php",
-            "name": "Php configuration",
-            "file": ""
+            "name": "Scripts - Update Top Level Domains.php",
+            "file": "scripts\\update-top-level-domains.php"
         },
         {
             "type": "command",
             "name": "phpunit hack configuration",
             "program": "php",
-            "args": ["C:/Projects/PHP/Rector/vendor/bin/phpunit", "--testdox", "tests/EmailAddressTest.php"],
+            "args": [
+                "vendor/bin/phpunit",
+                "--testdox",
+                "tests/EmailAddressTest.php"
+            ],
         },
-        
-        
-        
-        
+        {
+            "type": "php-test",
+            "name": "EmailAddressTest PHPUnit test",
+            "phpUnitExecutable": "$PROJECT_DIR$\\vendor\\bin\\phpunit",
+            "arguments": [
+                "--testdox",
+                "tests/EmailAddressTest.php"
+            ],
+        },
+        {
+            "type": "php-test",
+            "name": "EmailAddressTest PHPUnit test 2",
+            "phpUnitExecutable": "vendor\\bin\\phpunit",
+            "arguments": [
+                "--testdox",
+                "tests/EmailAddressTest.php"
+            ],
+        }
+
     ]
 }

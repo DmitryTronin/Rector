@@ -35,13 +35,5 @@ class EmailAddress
 
     public function asString(): string
     {        return $this->emailAddress;    }
-    public function ehhh(){
-        self::method();
-        return 1;
-        return 2;
-    }
 
 }
-$user_name="test";
-$data=array('user_name'=>$user_name,'password'=>$password);
-DB::table('testtable')->insert($data);
