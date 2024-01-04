@@ -7,6 +7,11 @@ use EmailValidation\EmailDataProvider;
 use EmailValidation\Validations\DisposableEmailValidator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class DisposableEmailValidatorTest extends TestCase
 {
     /**
@@ -30,7 +35,7 @@ class DisposableEmailValidatorTest extends TestCase
             ['dave@something.com', false],
             ['dave@bestvpn.top', true],
             ['dave@bel.kr', true],
-            ['dave@10minutemail.de', true]
+            ['dave@10minutemail.de', true],
         ];
     }
 }

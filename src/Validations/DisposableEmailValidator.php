@@ -9,7 +9,6 @@ class DisposableEmailValidator extends Validator implements ValidatorInterface
     public function getValidatorName(): string
     {
         return 'disposable_email_provider'; // @codeCoverageIgnore
-
     }
 
     public function getResultResponse(): bool

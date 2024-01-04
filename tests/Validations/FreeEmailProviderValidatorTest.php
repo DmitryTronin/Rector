@@ -7,6 +7,11 @@ use EmailValidation\EmailDataProvider;
 use EmailValidation\Validations\FreeEmailServiceValidator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class FreeEmailProviderValidatorTest extends TestCase
 {
     /**

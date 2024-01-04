@@ -27,6 +27,7 @@ abstract class Validator
     public function setEmailAddress(EmailAddress $emailAddress): Validator
     {
         $this->emailAddress = $emailAddress;
+
         return $this;
     }
 
@@ -38,6 +39,7 @@ abstract class Validator
     public function setEmailDataProvider(EmailDataProviderInterface $emailDataProvider): Validator
     {
         $this->emailDataProvider = $emailDataProvider;
+
         return $this;
     }
 }

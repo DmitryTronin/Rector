@@ -7,6 +7,11 @@ use EmailValidation\EmailDataProvider;
 use EmailValidation\Validations\RoleBasedEmailValidator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class RoleBasedEmailValidatorTest extends TestCase
 {
     /**

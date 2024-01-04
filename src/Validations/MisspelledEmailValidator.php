@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace EmailValidation\Validations;
 
 /**
- * Adapted from: https://github.com/GromNaN/MailCheck
+ * Adapted from: https://github.com/GromNaN/MailCheck.
  */
 class MisspelledEmailValidator extends Validator implements ValidatorInterface
 {
@@ -31,9 +31,6 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
         return $suggestion;
     }
 
-    /**
-     * @return string
-     */
     private function findEmailAddressSuggestion(): string
     {
         if ($domainSuggestion = $this->findDomainSuggestion()) {
@@ -56,7 +53,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
     }
 
     /**
-     * @return bool|null|string
+     * @return null|bool|string
      */
     private function findDomainSuggestion()
     {
@@ -89,7 +86,7 @@ class MisspelledEmailValidator extends Validator implements ValidatorInterface
     }
 
     /**
-     * @return bool|null|string
+     * @return null|bool|string
      */
     private function findTopLevelDomainSuggestion()
     {
