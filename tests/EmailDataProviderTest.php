@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EmailDataProviderTest extends TestCase
 {
+    // test
     private EmailDataProvider $emailDataProvider;
 
     public function testGetEmailProviders(): void

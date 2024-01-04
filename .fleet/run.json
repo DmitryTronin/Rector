@@ -28,21 +28,17 @@
         {
             "type": "php-test",
             "name": "EmailAddressTest PHPUnit test",
-            "phpUnitExecutable": "$PROJECT_DIR$\\vendor\\bin\\phpunit",
+            "phpUnitExecutable": "vendor/bin/phpunit",
             "arguments": [
                 "--testdox",
                 "tests/EmailAddressTest.php"
             ],
         },
         {
-            "type": "php-test",
-            "name": "EmailAddressTest PHPUnit test 2",
-            "phpUnitExecutable": "vendor\\bin\\phpunit",
-            "arguments": [
-                "--testdox",
-                "tests/EmailAddressTest.php"
-            ],
-        }
+            "type": "php",
+            "name": "Check PHP Version",
+            "file": "phpversion.php",
+        },
 
     ]
 }

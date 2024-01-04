@@ -1,4 +1,5 @@
 {
     "phpunit.executable": "C:\\Projects\\PHP\\Rector\\vendor\\bin\\phpunit.bat",
-    "php.language.level": "8.2",
+    "toolchains": [],
+    "php.language.level": "8.1",
 }
