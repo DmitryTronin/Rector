@@ -5,9 +5,13 @@ namespace EmailValidation\Tests;
 use EmailValidation\EmailAddress;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class EmailAddressTest extends TestCase
 {
-
     private const VALID_TEST_EMAIL = 'dave@gmail.com';
     private const INVALID_TEST_EMAIL = 'dave----gmail.com';
 
@@ -15,6 +19,11 @@ class EmailAddressTest extends TestCase
 
     private EmailAddress $invalidEmail;
 
+    protected function setUp(): void
+    {
+        $this->validEmail = new EmailAddress(self::VALID_TEST_EMAIL);
+        $this->invalidEmail = new EmailAddress(self::INVALID_TEST_EMAIL);
+    }
 
     public function testEmailNamePartConstant(): void
     {
@@ -65,11 +74,5 @@ class EmailAddressTest extends TestCase
     public function testIsValidFormatForInvalidEmail(): void
     {
         $this->assertFalse($this->invalidEmail->isValidEmailAddressFormat());
-    }
-
-    protected function setUp(): void
-    {
-        $this->validEmail = new EmailAddress(self::VALID_TEST_EMAIL);
-        $this->invalidEmail = new EmailAddress(self::INVALID_TEST_EMAIL);
     }
 }

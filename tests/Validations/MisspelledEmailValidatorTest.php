@@ -7,6 +7,11 @@ use EmailValidation\EmailDataProvider;
 use EmailValidation\Validations\MisspelledEmailValidator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class MisspelledEmailValidatorTest extends TestCase
 {
     /**
@@ -31,7 +36,7 @@ class MisspelledEmailValidatorTest extends TestCase
             ['dave@yahoo.oe', 'dave@yahoo.de'],
             ['dave@a-made-up-domain.infi', 'dave@a-made-up-domain.info'],
             ['info@iroland.cim', 'info@ireland.com'],
-            ['info@gmail.com', '']
+            ['info@gmail.com', ''],
         ];
     }
 }

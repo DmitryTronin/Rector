@@ -21,8 +21,7 @@ class EmailValidator
         EmailAddress $emailAddress,
         ValidationResults $validationResults,
         EmailDataProviderInterface $emailDataProvider
-    )
-    {
+    ) {
         $this->emailAddress = $emailAddress;
         $this->validationResults = $validationResults;
         $this->emailDataProvider = $emailDataProvider;
@@ -30,13 +29,13 @@ class EmailValidator
 
     /**
      * @param Validator[] $validators
-     * @return self
      */
     public function registerValidators(array $validators): EmailValidator
     {
         foreach ($validators as $validator) {
             $this->registerValidator($validator);
         }
+
         return $this;
     }
 
@@ -44,8 +43,26 @@ class EmailValidator
     {
         $this->registeredValidators[] = $validator
             ->setEmailAddress($this->getEmailAddress())
-            ->setEmailDataProvider($this->getEmailDataProvider());
+            ->setEmailDataProvider($this->getEmailDataProvider())
+        ;
+
         return $this;
+    }
+
+    public function getValidationResults(): ValidationResults
+    {
+        if (!$this->validationResults->hasResults()) {
+            $this->runValidation();
+        }
+
+        return $this->validationResults;
+    }
+
+    public function runValidation(): void
+    {
+        foreach ($this->registeredValidators as $validator) {
+            $this->validationResults->addResult($validator->getValidatorName(), $validator->getResultResponse());
+        }
     }
 
     private function getEmailAddress(): EmailAddress
@@ -56,20 +73,5 @@ class EmailValidator
     private function getEmailDataProvider(): EmailDataProviderInterface
     {
         return $this->emailDataProvider;
-    }
-
-    public function getValidationResults(): ValidationResults
-    {
-        if (!$this->validationResults->hasResults()) {
-            $this->runValidation();
-        }
-        return $this->validationResults;
-    }
-
-    public function runValidation(): void
-    {
-        foreach ($this->registeredValidators as $validator) {
-            $this->validationResults->addResult($validator->getValidatorName(), $validator->getResultResponse());
-        }
     }
 }

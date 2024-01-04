@@ -6,12 +6,17 @@ use EmailValidation\EmailAddress;
 use EmailValidation\Validations\ValidFormatValidator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class ValidFormatValidatorTest extends TestCase
 {
     /**
      * @dataProvider emailsDataProvider
+     *
      * @param mixed $emailAddress
-     * @param bool $expectedResult
      */
     public function testIsValidFormat($emailAddress, bool $expectedResult): void
     {

@@ -5,16 +5,26 @@ namespace EmailValidation\Tests;
 use EmailValidation\ValidationResults;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class ValidationResultsTest extends TestCase
 {
     private ValidationResults $validationResults;
+
+    protected function setUp(): void
+    {
+        $this->validationResults = new ValidationResults();
+    }
 
     public function testAddResult(): void
     {
         $this->validationResults->addResult('a-key', 'a-value');
         $actual = $this->validationResults->asArray();
         $expected = [
-            'a-key' => 'a-value'
+            'a-key' => 'a-value',
         ];
 
         $this->assertSame($expected, $actual);
@@ -25,7 +35,7 @@ class ValidationResultsTest extends TestCase
         $this->validationResults->addResult('a-key', 'a-value');
         $actual = $this->validationResults->asJson();
         $expected = json_encode([
-            'a-key' => 'a-value'
+            'a-key' => 'a-value',
         ]);
 
         $this->assertSame($expected, $actual);
@@ -38,10 +48,5 @@ class ValidationResultsTest extends TestCase
 
         $validationResults->addResult('a-key', 'a-value');
         $this->assertTrue($validationResults->hasResults());
-    }
-
-    protected function setUp(): void
-    {
-        $this->validationResults = new ValidationResults();
     }
 }

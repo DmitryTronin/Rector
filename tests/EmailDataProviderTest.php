@@ -5,10 +5,20 @@ namespace EmailValidation\Tests;
 use EmailValidation\EmailDataProvider;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ *
+ * @coversNothing
+ */
 class EmailDataProviderTest extends TestCase
 {
     // test
     private EmailDataProvider $emailDataProvider;
+
+    protected function setUp(): void
+    {
+        $this->emailDataProvider = new EmailDataProvider();
+    }
 
     public function testGetEmailProviders(): void
     {
@@ -36,10 +46,5 @@ class EmailDataProviderTest extends TestCase
         $tlds = $this->emailDataProvider->getTopLevelDomains();
         $this->assertIsArray($tlds);
         $this->assertContains('aero', $tlds);
-    }
-
-    protected function setUp(): void
-    {
-        $this->emailDataProvider = new EmailDataProvider();
     }
 }

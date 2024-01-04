@@ -8,7 +8,7 @@ class FreeEmailServiceValidator extends Validator implements ValidatorInterface
 {
     public function getValidatorName(): string
     {
-        return 'free_email_provider'; //@codeCoverageIgnore
+        return 'free_email_provider'; // @codeCoverageIgnore
     }
 
     public function getResultResponse()
